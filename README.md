@@ -33,8 +33,8 @@ Cs6
 - Enter Cs6
 - Enter 3 (Install Driver)
 - Select the driver to install
-Qualcomm805A7xx,A6xx.so
-Qualcomm849A7xx.so
-v26.0.0R8A8xx.so
-v26.0.0R8A7xx.so
-v25.1.0R6.so
+ Qualcomm805A7xx,A6xx.so
+ Qualcomm849A7xx.so
+ v26.0.0R8A8xx.so
+ v26.0.0R8A7xx.so
+ v25.1.0R6.so
