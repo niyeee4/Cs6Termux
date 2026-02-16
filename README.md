@@ -1,5 +1,5 @@
 # Adobe After Effects CS6 on Termux
-Configure Proton 9 to Run After Effects CS6 on Termux (Android)
+- Configure Proton 9 to Run After Effects CS6 on Termux (Android)
 # ✨ Features
 - [x] Automatic installation of Adobe After Effects CS6 (Portable)
 - [x] Automatic installation of QuickTime
