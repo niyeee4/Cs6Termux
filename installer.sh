@@ -2,6 +2,7 @@
 
 set -e  # Exit immediately if any command fails
 rm -f $PREFIX/etc/tls/openssl.cnf
+rm -f $PREFIX/etc/bash.bashrc
 echo "Installing Packages"
 # Function to check if a command succeeds
 check_success() {
