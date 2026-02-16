@@ -46,3 +46,4 @@ Cs6
 - ```Drivers directory: $HOME/Drivers```
 # Credits
 - Airidosas252 [Proton9arm64ec](https://github.com/airidosas252/tur/tree/master/tur/proton)
+- K11MCH1 [Driver](https://github.com/K11MCH1/AdrenoToolsDrivers)
