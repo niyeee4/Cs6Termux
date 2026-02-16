@@ -43,3 +43,6 @@ Cs6
 > For a7xx maybe a6xx
 - [x] v25.1.0R6.so
 > For a7xx, a6xx
+- ```Drivers directory: $HOME/Drivers```
+# Credits
+- Airidosas252 [Proton9arm64ec](https://github.com/airidosas252/tur/tree/master/tur/proton)
