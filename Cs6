@@ -1,0 +1,148 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+pkill -f com.termux.x11
+
+### General env vars
+
+export FEX_TSOENABLED=1
+export FEX_VECTORTSOENABLED=1
+export FEX_HALFBARRIERTSOENABLED=1
+export FEX_MEMCPYSETTSOENABLED=1
+
+export FEX_X87REDUCEDPRECISION=0
+export FEX_MULTIBLOCK=1
+export FEX_MAXINST=5000
+export FEX_HOSTFEATURES=off
+export FEX_SMALLTSCSCALE=1
+
+export FEX_SMC_CHECKS=mtrack
+export FEX_VOLATILEMETADATA=1
+export FEX_MONOHACKS=1
+
+export FEX_HIDEHYPERVISORBIT=0
+export FEX_DISABLEL2CACHE=0
+export FEX_DYNAMICL1CACHE=0
+
+export WINEESYNC=1
+export DXVK_HUD=fps,version,devinfo,gpuload
+export DXVK_CONFIG_FILE="$HOME/dxvk.conf"
+
+export vblank_mode=0
+export DXVK_ASYNC=1
+export VKD3D_FEATURE_LEVEL=12_0
+export VKD3D_SHADER_MODEL=6_6
+export WINE_DISABLE_FULLSCREEN_HACK=0
+export WINE_LOGICAL_CPUS_AS_CORES=5
+export WINE_CPU_TOPOLOGY=5:3,4,5,6,7
+
+export ADRENOTOOLS_DRIVER_NAME="vulkan.adreno.so"
+export ADRENOTOOLS_DRIVER_PATH="$PREFIX/drivers/"
+export ADRENOTOOLS_HOOKS_PATH="$PREFIX/lib"
+export VK_ICD_FILENAMES=$PREFIX/share/vulkan/icd.d/wrapper_icd.aarch64.json
+
+export WINEDEBUG=-all
+export WINEFSYNC=0
+
+while true; do
+clear
+echo "AFTER EFFECTS CS6"
+echo "Works Only On Snapdragon Devices"
+echo ""
+echo "1) After Effects Cs6"
+echo "2) Wine"
+echo "3) Install Driver"
+echo "4) Exit"
+read -p "Enter choice: " choice
+
+case $choice in
+    1)
+    echo "Launching Ae / ENTER 1 TO EXIT"
+
+    TERMUX_X11_FORCE_FLIP=1 termux-x11 :1 >/dev/null 2>&1 &
+    sleep 1
+    am start --user 0 -n com.termux.x11/.MainActivity >/dev/null 2>&1
+    sleep 1
+
+    DISPLAY=:1 \
+    WINE_DISABLE_KERNEL_WRITEWATCH=1 \
+    wine explorer /desktop=ae,1920x1080 C:\\ae.bat \
+    > $HOME/protonlog.txt 2>&1 &
+    WINEPID=$!
+
+    while kill -0 $WINEPID 2>/dev/null; do
+        clear
+        printf "\033[999;0H"
+        echo -e "\e[1;32mENTER 1 TO EXIT\e[0m"
+        read -t 1 exitchoice
+        [ "$exitchoice" = "1" ] && pkill -9 termux
+    done
+
+    pkill -f com.termux.x11
+    pkill -9 termux
+    break
+    ;;
+
+    2)
+    echo "Launching Wine / ENTER 1 TO EXIT"
+
+    TERMUX_X11_FORCE_FLIP=1 termux-x11 :1 >/dev/null 2>&1 &
+    sleep 1
+    am start --user 0 -n com.termux.x11/.MainActivity >/dev/null 2>&1
+    sleep 1
+
+    DISPLAY=:1 \
+    WINE_DISABLE_KERNEL_WRITEWATCH=1 \
+    wine explorer /desktop=shell,1920x1080 C:\\wine.bat \
+    > $HOME/protonlog.txt 2>&1 &
+
+    while true; do
+        clear
+        printf "\033[999;1H"
+        echo -e "\e[1;32mENTER 1 TO EXIT\e[0m"
+        read -t 1 exitchoice
+        [ "$exitchoice" = "1" ] && break
+    done
+
+    pkill -f com.termux.x11
+    pkill -9 termux
+    break
+    ;;
+
+    3)
+    echo "Scanning Drivers folder..."
+
+    DRIVER_DIR="$HOME/Drivers"
+    TARGET="/data/data/com.termux/files/usr/drivers/vulkan.adreno.so"
+
+    [ -d "$DRIVER_DIR" ] || { echo "Drivers folder not found."; continue; }
+
+    mapfile -t files < <(find "$DRIVER_DIR" -maxdepth 1 -name "*.so")
+    [ ${#files[@]} -eq 0 ] && { echo "No .so files found."; continue; }
+
+    echo "Select a driver:"
+    for i in "${!files[@]}"; do
+        echo "$((i+1))) $(basename "${files[$i]}")"
+    done
+
+    read -p "Enter number: " num
+    idx=$((num-1))
+    [ -z "${files[$idx]}" ] && { echo "Invalid selection."; continue; }
+
+    rm -f "$TARGET"
+    cp "${files[$idx]}" "$TARGET"
+
+    echo "Done."
+    sleep 1
+    ;;
+
+    4)
+        echo "Exiting..."
+        exit 0
+        ;;
+
+    *)
+        echo "Invalid choice!"
+        break
+        ;;
+esac
+done
