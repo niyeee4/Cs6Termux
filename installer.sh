@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 set -e  # Exit immediately if any command fails
-
+rm -f $PREFIX/etc/tls/openssl.cnf
 echo "Installing Packages"
 # Function to check if a command succeeds
 check_success() {
@@ -17,7 +17,7 @@ termux-setup-storage || check_success "Storage setup"
 # Install necessary dependencies
 yes | apt install -y x11-repo || check_success "Installing x11-repo"
 yes | apt install -y termux-x11-nightly libandroid-shmem || check_success "Installing required packages"
-yes | apt install -y pv unzip wget git which libc++ libdrm libx11 libxcb libxshmfence libwayland vulkan-loader-generic zlib zstd -o Dpkg::Options::="--force-confnew" || check_success "Installing required packages"
+yes | apt install -y pv unzip wget git which libc++ libdrm libx11 libxcb libxshmfence libwayland vulkan-loader-generic zlib zstd || check_success "Installing required packages"
 # Install hangover-wine to pull dependencies, then remove it
 apt install -y hangover-wine || check_success "Installing hangover-wine"
 apt remove -y hangover-wine || check_success "Removing hangover-wine (dependencies retained)"
