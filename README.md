@@ -1,5 +1,5 @@
-# Adobe After Effects CS6 on Termux
-- Configure Proton 9 to Run After Effects CS6 on Termux (Android)
+# Adobe After Effects CS6 on Android
+- After Effects CS6 on Android via Termux + Proton 9 Configuration Script
 # ✨ Features
 - [x] Automatic installation of Adobe After Effects CS6 (Portable)
 - [x] Automatic installation of QuickTime
@@ -21,16 +21,16 @@
 - 8 GB RAM or more
 - At least 10 GB free storage
 > Older Snapdragon devices may still work
-# Installation
+# 📦 Installation
 - Run this command in Termux:
 ```bash
 curl -sL https://raw.githubusercontent.com/niyeee4/Cs6Termux/refs/heads/main/ae.sh | bash
 ```
-- Launch Adobe After Effects CS6 with:
+- 💻 Launch Adobe After Effects CS6 with:
 ```bash
 Cs6
 ```
-# Install Driver
+# 🔧 Install Driver
 - Type Cs6 in Termux
 - Select option 3 (Install Driver)
 - Select the driver to install:
@@ -45,6 +45,6 @@ Cs6
 - [x] v25.1.0R6.so
 > For Adreno A7xx / A6xx GPUs
 - ```Drivers directory: $HOME/Drivers```
-# Credits
+# 🙏 Credits
 - Airidosas252 [Proton9arm64ec](https://github.com/airidosas252/tur/tree/master/tur/proton)
 - K11MCH1 [Drivers](https://github.com/K11MCH1/AdrenoToolsDrivers)
