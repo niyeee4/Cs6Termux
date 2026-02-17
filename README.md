@@ -1,5 +1,6 @@
 # Adobe After Effects CS6 on Android
 - After Effects CS6 on Android via Termux + Proton 9 Configuration Script
+- [android 12+ may need to disable phantom process killer](https://github.com/atamshkai/Phantom-Process-Killer)
 # ✨ Features
 - [x] Automatic installation of Adobe After Effects CS6 (Portable)
 - [x] Automatic installation of QuickTime
