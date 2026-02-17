@@ -68,7 +68,7 @@ ln -sfT /sdcard/Download $HOME/.wine/dosdevices/e:
 ln -sfT /sdcard $HOME/.wine/dosdevices/d:
 # Drivers
 cp -r $HOME/Cs6Termux/Drivers $HOME/
-mkdir -p /data/data/com.termux/files/usr/drivers && cp "$HOME/Drivers/Qualcomm805A7xx,A6xx.so" /data/data/com.termux/files/usr/drivers/vulkan.adreno.so
+mkdir -p /data/data/com.termux/files/usr/drivers && cp "$HOME/Drivers/v25.1.0R6.so" /data/data/com.termux/files/usr/drivers/vulkan.adreno.so
 cd ~
 rm -rf Cs6Termux
 clear
