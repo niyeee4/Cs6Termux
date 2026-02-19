@@ -30,9 +30,13 @@
 ```bash
 curl -sL https://raw.githubusercontent.com/niyeee4/Cs6Termux/refs/heads/main/ae.sh | bash
 ```
-- 💻 Launch Adobe After Effects CS6 with:
+- Launch Adobe After Effects CS6 with:
 ```bash
 Cs6
+```
+- Exit
+```bash
+Type 1 to exit
 ```
 # Tutorial:
 [![Tutorial](https://github.com/niyeee4/Cs6Termux/blob/13871ed40ce85fa487544a0b1a0f1dec92df194f/ae.png)](https://youtu.be/7ONd3KhEwBE?si=znKYsjXLX52YQimr)
