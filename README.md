@@ -2,6 +2,7 @@
 - After Effects CS6 on Android via Termux + Proton 9 Configuration Script
 - [Android 12+ may need to disable Phantom Process Killer](https://github.com/atamshkai/Phantom-Process-Killer)
 # How to preview smoothly in After Effects?
+- Use RAM Preview
 [![Preview](https://raw.githubusercontent.com/niyeee4/Cs6Termux/refs/heads/main/D%E1%BB%B1%20%C3%A1n%20m%E1%BB%9Bi%203%20%5B12E492E%5D.png)](https://raw.githubusercontent.com/niyeee4/Cs6Termux/refs/heads/main/D%E1%BB%B1%20%C3%A1n%20m%E1%BB%9Bi%203%20%5B12E492E%5D.png)
 # ✨ Features
 - [x] Automatic installation of Adobe After Effects CS6 (Portable)
