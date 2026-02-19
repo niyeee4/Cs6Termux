@@ -24,7 +24,7 @@
 - Snapdragon 8 Gen 1 or newer
 - 8 GB RAM or more
 - At least 10 GB free storage
-> Older Snapdragon devices may still work, but slower
+> Older Snapdragon devices MAY still work, but slower
 # 📦 Installation
 - Run this command in Termux:
 ```bash
