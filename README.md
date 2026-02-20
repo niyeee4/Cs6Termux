@@ -20,6 +20,8 @@
 # 📋 Requirements
 - [Termux](https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk)
 - [Termux:X11-Extra](https://github.com/moio9/termux-x11-extra/releases/download/v1.0-rc1/app-universal-debug.apk)
+
+- If X11-Extra doesn't work, please install https://github.com/termux/termux-x11/releases/download/nightly/app-universal-debug.apk
 ## 🚀 Recommended specs (Snapdragon only):
 - Snapdragon 8 Gen 1 or newer
 - 8 GB RAM or more
