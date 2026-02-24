@@ -18,6 +18,10 @@
 - [x] AEPixelSorter2
 - [x] Ntsc Rs
 - [x] PixelEncoder
+- Deep Glow install script (requires Adobe After Effects CS6 installed first)
+```bash
+curl -sL https://raw.githubusercontent.com/niyeee4/Cs6Termux/refs/heads/main/deepglowinstall.sh | bash
+```
 # 📋 Requirements
 - [Termux](https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk)
 - [Termux:X11-Extra](https://github.com/moio9/termux-x11-extra/releases/download/v1.0-rc1/app-universal-debug.apk)
