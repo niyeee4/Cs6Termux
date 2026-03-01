@@ -18,7 +18,7 @@
 - [x] AEPixelSorter2
 - [x] Ntsc Rs
 - [x] PixelEncoder
-- Extra Plugin Installer (requires After Effects CS6 installed first)
+- Extra Plugin (requires After Effects CS6 installed first)
 - [x] Deep Glow
 ```bash
 curl -sL https://raw.githubusercontent.com/niyeee4/Cs6Termux/refs/heads/main/deepglowinstall.sh | bash
