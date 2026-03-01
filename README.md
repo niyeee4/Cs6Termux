@@ -29,7 +29,7 @@ curl -sL https://raw.githubusercontent.com/niyeee4/Cs6Termux/refs/heads/main/sig
 ```
 - [x] Red Giant Universe 1.4
 ```bash
-???
+not yet
 ```
 # 📋 Requirements
 - [Termux](https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk)
